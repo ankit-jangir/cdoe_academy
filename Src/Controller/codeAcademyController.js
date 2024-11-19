@@ -12,25 +12,23 @@ const getAllData = async (req, res) => {
   }
 };
 
-const userSignUp = async (req, res) => {
+const singup = async (req, res) => {
   try {
-    const { Mobile_Number, Email, Password } = req.body;
-    console.log(Mobile_Number, Email, Password);
-    const mySignUp = await signUpModel.create({
-      Mobile_Number,
-      Email,
-      Password,
-    });
-    console.log(mySignUp);
-    await allUserInformation.create({
-      userSignUp: mySignUp._id,
-    });
-
-    res.status(200).send({ mySignUp, Message: "signup successFully" });
+      const { Mobile_Number, Email, Password } = req.body
+      if(Mobile_Number.length!=10){
+          res.send({message:"Phone_number error"})
+      }
+      const Hash_Password = await bcyrpt.hash(Password, 10)
+      const result = await user.create({
+          Mobile_Number: Mobile_Number,
+          Email: Email,
+          Password: Hash_Password
+      }) 
+      res.send({ status: "001", message: "succesfully singup" })
   } catch (error) {
-    res.status(500).send(error);
+      console.log(error);
   }
-};
+} 
 
 const profileController = async (req, res) => {
   try {
