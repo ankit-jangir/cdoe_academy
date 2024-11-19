@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { profileModal } = require("./Profile");
 const ProjectSchema = mongoose.Schema({
   Tittle: {
     type: String,
@@ -11,3 +12,5 @@ const ProjectSchema = mongoose.Schema({
   },
 });
 const ProjectModel = mongoose.model("ProjectModel", ProjectSchema);
+
+module.exports = ProjectModel
