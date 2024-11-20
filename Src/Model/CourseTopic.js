@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
 const CourseTopicschema = mongoose.Schema({
-    Mytopic:{
-        type:Array
+    Mytopic: {
+        type: Array
     }
 })
-const CourseTopicmodel = mongoose.model('CourseToipc',CourseTopicschema)
+const CourseTopicmodel = mongoose.model('CourseToipcs', CourseTopicschema)
+module.exports = CourseTopicmodel;

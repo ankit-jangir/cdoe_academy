@@ -15,7 +15,7 @@ const profileSchema = mongoose.Schema({
     type: String,
   },
   Linkedin: {
-    type: String,
+    type: String, 
   },
   Twitter: {
     type: String,
@@ -24,6 +24,5 @@ const profileSchema = mongoose.Schema({
     type: String,
   },
 });
-
 const profileModal = mongoose.model("profile", profileSchema);
 module.exports = { profileModal };
