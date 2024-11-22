@@ -22,7 +22,6 @@ const filtercoursetopic = async (req, res) => {
 
         await updatedTopic.save();
 
-
         res.status(200).json(filteredTopics);
 
     } catch (error) {
@@ -31,5 +30,6 @@ const filtercoursetopic = async (req, res) => {
     }
 
 };
+
 
 module.exports = filtercoursetopic;
