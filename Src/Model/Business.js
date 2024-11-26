@@ -15,7 +15,7 @@ const BusinessSchema = mongoose.Schema({
   TotalSeatForPurchase: {
     type: Number,
   },
-  MyPayment: { type: schema.Types.ObjectId, ref: "BusinessPayment" },
+  // MyPayment: { type: schema.Types.ObjectId, ref: "BusinessPayment" },
 });
 
 const Businessmodel = mongoose.model("Businessmodel", BusinessSchema);
@@ -28,7 +28,7 @@ const BusinessPaymentSchema = mongoose.Schema({
     type: Number,
   },
   CVVNumber: {
-    type: number,
+    type: Number,
   },
   FirstName: {
     type: String,
@@ -48,3 +48,4 @@ const BusinessPaymentmodel = mongoose.model(
   "BusinessPayment",
   BusinessPaymentSchema
 );
+module.exports = { Businessmodel, BusinessPaymentmodel }

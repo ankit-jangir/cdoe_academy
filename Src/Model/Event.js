@@ -15,8 +15,9 @@ const EventSchema = mongoose.Schema({
     Youtubelink: {
         type: String
     },
-    Total_user: null
+    Total_user: { type: Number, default: 0 }
 
 })
 
 const Eventmodel = mongoose.model('Eventmodel', EventSchema)
+module.exports = Eventmodel

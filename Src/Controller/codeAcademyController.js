@@ -16,22 +16,22 @@ const getAllData = async (req, res) => {
 
 const userSignUp = async (req, res) => {
   try {
-      const { Mobile_Number, Email, Password } = req.body
-      console.log(req.body)
-      if(Mobile_Number.length!=10){
-          res.send({message:"Phone_number error"})
-      }
-      const Hash_Password = await bcyrpt.hash(Password, 10)
-      const result = await signUpModel.create({
-          Mobile_Number: Mobile_Number,
-          Email: Email,
-          Password: Hash_Password
-      }) 
-      res.send({ status: "001", message: "succesfully singup" })
+    const { Mobile_Number, Email, Password } = req.body
+    console.log(req.body)
+    if (Mobile_Number.length != 10) {
+      res.send({ message: "Phone_number error" })
+    }
+    const Hash_Password = await bcyrpt.hash(Password, 10)
+    const result = await signUpModel.create({
+      Mobile_Number: Mobile_Number,
+      Email: Email,
+      Password: Hash_Password
+    })
+    res.send({ status: "001", message: "succesfully singup" })
   } catch (error) {
-      console.log(error);
+    console.log(error);
   }
-} 
+}
 
 const profileController = async (req, res) => {
   try {
@@ -54,7 +54,7 @@ const profileController = async (req, res) => {
       Twitter,
       Personal_Website,
     });
-    res
+    resku
       .status(200)
       .send({ userProfile, Message: "Profile Update Successfully" });
 
@@ -66,7 +66,7 @@ const profileController = async (req, res) => {
   }
 };
 
-const getproject = async (req,res)=>{
+const getproject = async (req, res) => {
   try {
     let project = await ProjectModel.find({})
     res.send(project)
@@ -74,4 +74,4 @@ const getproject = async (req,res)=>{
     console.log(error);
   }
 }
-module.exports = { getAllData, userSignUp, profileController,getproject };
+module.exports = { getAllData, userSignUp, profileController, getproject };

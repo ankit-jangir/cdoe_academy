@@ -8,14 +8,22 @@ const {
 } = require("../Controller/codeAcademyController");
 const projectcreate = require("../Controller/backController");
 const filtercoursetopic = require("../Controller/coursetopicfilter");
-const Router = express.Router();
+const { paymentbussiness, bussinessinfo } = require("../Controller/bussinesspayment");
+const { bussinesscreate } = require("../Controller/Bussiness");
+const eventcreate = require("../Controller/Event");
+const usercreate = require("../Controller/login");
+const route = express.Router();
 
-// Router.get("/getAllData", getAllData);
-Router.get("/getproject", getproject);
+// route.get("/getAllData", getAllData);
+route.get("/getproject", getproject);
 
-Router.post("/signUp", userSignUp);
-Router.post("/profile", profileController);
-Router.post("/project", projectcreate)
-Router.post('/filter', filtercoursetopic)
-
-module.exports = Router;
+route.post("/signUp", userSignUp);
+route.post("/profile", profileController);
+route.post("/project", projectcreate)
+route.post('/filter', filtercoursetopic)
+route.post("/bussiness", bussinesscreate)
+route.post("/payment", paymentbussiness)
+route.get("/paymentshow", bussinessinfo)
+route.post('/event', eventcreate)
+route.post('/reg', usercreate)
+module.exports = route;
