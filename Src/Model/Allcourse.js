@@ -26,7 +26,7 @@ const Allcourseschema = mongoose.Schema({
   Certification: {
     type: String,
   },
-  //   how many people take have this course
+  //   how many people take have taken this course
   userInclude: {
     type: String,
   },
