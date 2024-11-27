@@ -1,14 +1,8 @@
 const mongoose = require("mongoose")
-const url = "mongodb://localhost:27017/code_academy_project"
 
-const mongodb = () => {
-    mongoose.connect(url)
-        .then(() => {
-            console.log("mongoodb  connected...✌️");
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+const mongodb = (url) => {
+    return mongoose.connect(url)
+
 }
-mongodb()
+
 module.exports = { mongodb }
