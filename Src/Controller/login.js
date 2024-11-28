@@ -38,7 +38,7 @@ const usercreate = async (req, res) => {
         res.send({ status: "001", mess: "user registerd successfully", token })
 
     } catch (error) {
-        console.log(error);x
+        console.log(error);
 
         // no change
     }
@@ -55,7 +55,6 @@ const login = async (req, res) => {
             const password = await bcrypt.compare(Password, findemail.password)
             console.log(password);
             if (password) {
-
                 const payload = {
                     name: findemail.Email,
                     Mobile: findemail.Mobile_Number
@@ -90,6 +89,7 @@ const login = async (req, res) => {
 
 
 }
+
 
 
 module.exports = { usercreate, login }
