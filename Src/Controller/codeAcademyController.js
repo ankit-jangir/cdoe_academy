@@ -95,7 +95,26 @@ try {
 }
   
 }
-const UserLogout = async (req,res)=>{
+
+const UserVerifiy = async(req,res, next)=>{
+  try {
+    const tokens = req.headers.authorization
+    const token = await tokens.split(" ")[1]
+    // console.log(token);
+    
+    var decoded = await jwt.verify(token,'secret')
+    // console.log(decoded);
+    
+    req.signUpModel = decoded
+    res.status(200).json({message:"successfully verify"})
+    next()
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+
+const UserLogout = async (req,res,next)=>{
 try {
   console.log(req.signUpModel);
   const logout = await signUpModel.findOneAndUpdate({Email:req.signUpModel.Email},{Token:null})
@@ -354,6 +373,7 @@ module.exports = {
   getAllData,
   userSignUp,
   UserLogin,
+  UserVerifiy,
   UserLogout,
   profileController,
   userCourseController,
@@ -364,7 +384,6 @@ module.exports = {
   getEvent,
   updateEvent,
   getAllCourses,
-
   createCourseTopic,
   filterCourseTopic,
 };

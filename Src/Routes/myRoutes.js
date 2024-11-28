@@ -16,6 +16,7 @@ const {
   filterCourseTopic,
   UserLogin,
   UserLogout,
+  UserVerifiy,
 } = require("../Controller/codeAcademyController");
 const { projectcreate, Eventcreate, AllCourseCreate } = require("../Controller/backController");
 const Course = require("../Controller/trandingLang");
@@ -26,7 +27,8 @@ const Router = express.Router();
 Router.get("/getAllData", getAllData);
 Router.post("/signUp", userSignUp);
 Router.get("/UserLogin",UserLogin);
-Router.post("/Logout",UserLogout)
+Router.get("/UserVerifiy",UserVerifiy);
+Router.post("/Logout",UserVerifiy,UserLogout)
 Router.post("/profile", profileController);
 Router.post("/userCourse", userCourseController);
 Router.post("/upgradePlane", upgradePlaneController);
