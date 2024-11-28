@@ -21,10 +21,7 @@ const schema = new mongoose.Schema({
   Upgradeplan: {
     type: mongoose.ObjectId,
     ref: "Upgradeplan",
-  },
-  UpgradeplanType: {
-    type: String,
-    default: "free",
+    default: null,
   },
   studentMemberShip: {
     type: mongoose.ObjectId,

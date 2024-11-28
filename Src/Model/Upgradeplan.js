@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Upgradeplanschema = mongoose.Schema({
   Price: {
     type: Number,
-    default: "free",
   },
   FirstName: {
     type: String,
@@ -16,3 +15,4 @@ const Upgradeplanschema = mongoose.Schema({
 });
 
 const Upgradeplanmodel = mongoose.model("Upgradeplan", Upgradeplanschema);
+module.exports = Upgradeplanmodel;

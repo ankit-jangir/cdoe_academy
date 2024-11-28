@@ -5,3 +5,4 @@ const CourseTopicschema = mongoose.Schema({
     }
 })
 const CourseTopicmodel = mongoose.model('CourseToipc',CourseTopicschema)
+module.exports = CourseTopicmodel

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { string } = require("zod");
 const signUpSchema = mongoose.Schema({
   Mobile_Number: {
     type: Number,
@@ -9,6 +10,9 @@ const signUpSchema = mongoose.Schema({
   Password: {
     type: String,
   },
+  Token:{
+    type:String
+  }
 });
 
 const signUpModel = mongoose.model("signUp", signUpSchema);

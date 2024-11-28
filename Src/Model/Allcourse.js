@@ -22,7 +22,10 @@ const Allcourseschema = mongoose.Schema({
   Coursestage: {
     type: String,
   },
-  Time: null,
+  Time:{
+    type:Number,
+    default:0
+  },
   Certification: {
     type: String,
   },
@@ -32,7 +35,12 @@ const Allcourseschema = mongoose.Schema({
   },
 
   //   how many course present in this courser
-  Courseinclude: null,
+  Courseinclude:{
+    type:Number,
+    default:0
+  },
 });
 
 const Allcoursemodel = mongoose.model("Allcoursemodel", Allcourseschema);
+
+module.exports = Allcoursemodel

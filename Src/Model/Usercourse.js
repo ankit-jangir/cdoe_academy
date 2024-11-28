@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const usercourseschema = mongoose.schema({
+const usercourseschema = mongoose.Schema({
   Chosesourse: {
     type: String,
   },
@@ -11,4 +11,5 @@ const usercourseschema = mongoose.schema({
   },
 });
 
-const usercoursemodel = mongoose.model("usercourse", usercourseschema);
+const userCourseModel = mongoose.model("usercourse", usercourseschema);
+module.exports = userCourseModel;
